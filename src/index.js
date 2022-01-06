@@ -67,35 +67,37 @@ webhook.init();
 
 const recognizeMusic = async (url) => {
     const form = new FormData();
-    form.append("api_token", "a802cdbc575fd0ee54fafca734db7b637");
+    form.append("api_token", "8eeb37a83c63ce1499b15c656865227a");
     form.append("url", url);
     form.append("return", "deezer");
 
     const config = {
         method: 'post',
         url: 'https://api.audd.io/',
-        data: form,
-        header: {
-            'Content-Type': `multipart/form-data`
-        }
+        data: {
+            api_token: "8eeb37a83c63ce1499b15c656865227a",
+            url: url,
+            return: 'deezer'
+        },
+        headers: { "Content-Type": "multipart/form-data" },
     }
 
     const response = await axios(config);
 
     console.log(response.data);
 
-    if (response && response.result) {
+    if (response && response.data.result) {
         return {
-            artist: response.result.artist,
-            title: response.result.title,
-            album: response.result.album,
+            artist: response.data.result.artist,
+            title: response.data.result.title,
+            album: response.data.result.album,
             deezer: {
                 picture:
-                    response.result.deezer && response.result.deezer.artist
-                        ? response.result.deezer.artist.picture_medium
+                    response.data.result.deezer && response.data.result.deezer.artist
+                        ? response.data.result.deezer.artist.picture_medium
                         : undefined,
-                preview: response.result.deezer
-                    ? response.result.deezer.preview
+                preview: response.data.result.deezer
+                    ? response.data.result.deezer.preview
                     : undefined,
             },
         };
