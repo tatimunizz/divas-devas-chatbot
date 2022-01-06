@@ -67,17 +67,22 @@ webhook.init();
 
 const recognizeMusic = async (url) => {
     const form = new FormData();
-    form.append("api_token", process.env.AUDD_TOKEN);
+    form.append("api_token", "a802cdbc575fd0ee54fafca734db7b637");
     form.append("url", url);
     form.append("return", "deezer");
 
-    const response = await axios.post("https://api.audd.io/", {
-        body: form,
-        responseType: "json",
-        resolveBodyOnly: true,
-    });
+    const config = {
+        method: 'post',
+        url: 'https://api.audd.io/',
+        data: form,
+        header: {
+            'Content-Type': `multipart/form-data`
+        }
+    }
 
-    console.log(response);
+    const response = await axios(config);
+
+    console.log(response.data);
 
     if (response && response.result) {
         return {
