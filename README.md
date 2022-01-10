@@ -36,7 +36,7 @@ git clone git@github.com:tatimunizz/devas-devas-chatbot.git
 **2.** Install the dependencies.
 
 ```shell
-npm ci
+npm i
 ```
 
 **3.** Change the `.env` file and add the [Zenvia](https://app.zenvia.com/home/api) and [AudD](https://dashboard.audd.io/) tokens. 
@@ -44,5 +44,5 @@ npm ci
 **4.** Run the application.
 
 ```shell
-npm start
+npm run dev
 ```
