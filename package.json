@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "test:ci": "npm test -- --coverage",
-    "dev": "nodemon src/index.js"
+    "test": "jest",
+    "dev": "nodemon src/index.js",
+    "start": "npm src/index.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,9 @@
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "got": "^12.0.0",
     "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "jest": "^27.4.7"
   }
 }

@@ -23,6 +23,7 @@ Before you start, you need to install and configure the tools and services:
 ## Dependencies
 
 ```npm install dotenv express axios```
+```npm install --save-dev jest```
 
 ## Getting started
 
@@ -36,13 +37,13 @@ git clone git@github.com:tatimunizz/devas-devas-chatbot.git
 **2.** Install the dependencies.
 
 ```shell
-npm ci
+npm i
 ```
 
-**3.** Change the `.env` file and add the [Zenvia](https://app.zenvia.com/home/api) and [AudD](https://dashboard.audd.io/) tokens. 
+**3.** Change the `.env-example` to `.env` file and add the [Zenvia](https://app.zenvia.com/home/api) and [AudD](https://dashboard.audd.io/) tokens. 
 
 **4.** Run the application.
 
 ```shell
-npm start
+npm run dev
 ```
