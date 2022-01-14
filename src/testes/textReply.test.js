@@ -1,15 +1,11 @@
 const { test, expect, describe, it } = require("@jest/globals");
 const { textReply } = require("../functions/textReply");
-jest.mock("axios");
-const mocked =  
-music: {
-    artist: "Imagine Dragons"
-    title: "Warriors"
-    album: "Warriors"
-  
-}
+const music = {
+  artist: "1",
+  title: "2",
+  album: "1",
+};
 
 test("deve retornar um objeto com artista, titulo e album", () => {
-  expect(textReply(mocked).toEqual(mocked)
-},
-);
+  expect(textReply(music).toEqual(music));
+});

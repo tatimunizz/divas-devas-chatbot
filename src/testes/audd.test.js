@@ -3,10 +3,10 @@ const axios = require("axios");
 const { request } = require("../services/audd");
 jest.mock("axios");
 
-test("retorna info de uma musica", async () => {
-  axios.post.mockResolvedValue({
-    data: [
-      {
+describe("Audd service", () => {
+  it("retorna info de uma musica", async () => {
+    await axios.post.mockResolvedValue({
+      /*data: {
         status: "success",
         result: {
           artist: "Imagine Dragons",
@@ -128,12 +128,12 @@ test("retorna info de uma musica", async () => {
             uri: "spotify:track:1lgN0A2Vki2FTON5PYq42m",
           },
         },
-      },
-    ],
+      }, */
+    });
+    const artist = await request(
+      "https://audd.tech/example.mp3",
+      "qualquercoisa"
+    );
+    //expect(artist).toEqual("Imagine Dragons");
   });
-  const artist = await request(
-    "https://audd.tech/example.mp3",
-    process.env.AUDD_TOKEN
-  );
-  expect(data.result.artist).toEqual("Imagine Dragons");
 });
