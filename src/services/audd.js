@@ -13,6 +13,7 @@ const request = async (url, token) => {
       "Content-Type": "multipart/form-data",
     },
   });
+  console.log(response.data);
   return response.data;
 };
 
