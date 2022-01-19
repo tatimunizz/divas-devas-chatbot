@@ -1,0 +1,19 @@
+version: '3'
+services:
+  node:
+    build:
+      dockerfile: node.dockerfile
+      context: .
+    image: tatimunizz/chatbot
+    environment:
+      - ZENVIA_TOKEN=${ZENVIA_TOKEN}
+      - AUDD_TOKEN=${AUDD_TOKEN}
+    container_name: chatbot
+
+  localtunnel:
+    build:
+      context: .
+      dockerfile: localurl.dockerfile
+    command: "usr/local/bin/lt --port 3000 --local-host node --subdomain whatsappmusic"
+    depends_on:
+      - node
