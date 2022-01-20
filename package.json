@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
     "test": "jest",
-    "dev": "nodemon src/index.js",
-    "start": "npm src/index.js"
+    "test:ci": "npm test -- --coverage",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
