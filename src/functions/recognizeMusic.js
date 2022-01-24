@@ -17,7 +17,7 @@ const recognizeMusic = async (url, token) => {
       },
     };
   } catch (error) {
-    throw error;
+    throw new Error(error);
   }
 };
 
