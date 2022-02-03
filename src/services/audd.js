@@ -1,7 +1,8 @@
 const axios = require("axios");
 
 const request = async (url, token) => {
-  const response = await axios.post({
+  const response = await axios({
+    method: 'post',
     url: "https://api.audd.io/",
     data: {
       api_token: token,
